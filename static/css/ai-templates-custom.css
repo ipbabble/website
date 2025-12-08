@@ -72,14 +72,15 @@ aside.pf-c-jump-links {
   }
 }
 
-/* Homepage color overrides - better contrast on purple background */
+/* Homepage hero section - Red Hat brand styling */
 #hero-section a {
-  color: #ffffff !important;
-  text-decoration: underline !important;
+  color: #0066cc !important;
+  text-decoration: none !important;
 }
 
 #hero-section a:hover {
-  color: #f0f0f0 !important;
+  color: #ee0000 !important;
+  text-decoration: underline !important;
 }
 
 /* Smaller font sizes throughout */
