@@ -3,13 +3,14 @@
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Kill any existing Hugo servers
-echo "Checking for existing Hugo servers..."
-if pgrep -f "hugo server" > /dev/null; then
-    echo "Killing existing Hugo server..."
-    pkill -9 -f "hugo server"
-    sleep 2
-fi
+# Always kill any existing Hugo servers first
+echo "Killing any existing Hugo servers..."
+pkill -9 -f "hugo server" 2>/dev/null
+sleep 2
+
+# Clear caches for clean rebuild
+echo "Clearing caches..."
+rm -rf public/ resources/ 2>/dev/null
 
 echo "Starting Hugo server for AI Templates documentation..."
 echo "Site will be available at: http://localhost:1313/"
