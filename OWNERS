@@ -1,0 +1,10 @@
+# AI Templates Documentation Maintainers
+
+approvers:
+  - ipbabble
+
+reviewers:
+  - ipbabble
+
+# This file follows the Kubernetes OWNERS file format
+# https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md

@@ -1,0 +1,20 @@
+  <header class="pf-c-page__header">
+    <div class="pf-c-page__header-brand">
+      <a href="{{ .Site.Home.RelPermalink }}" class="pf-c-page__header-brand-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        {{ with .Site.Params.site_logo }}
+          <img src="{{ relURL . }}" alt="{{ $.Site.Title }}" />
+        {{ end }}
+        <span style="color: white; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.5px;">{{ .Site.Title }}</span>
+      </a>
+    </div>
+    <div class="pf-c-page__header-tools">
+      {{ partial "site-navigation.html" .}}
+      {{ partial "search-form.html" . }}
+    </div>
+    <!-- Main navigation toggle - separate from header-tools so it's always visible on mobile -->
+    <div class="pf-c-page__header-tools-group">
+      <button class="pf-c-button pf-m-plain main-nav-toggle" type="button" aria-label="Main navigation" id="main-nav-toggle">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>

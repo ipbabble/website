@@ -1,0 +1,44 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+summary:
+products:
+- Product 1
+- Product 2
+- etc
+industries:
+- Industry 1
+- Industry 2
+- etc
+partners:
+- partner 1
+- partner 2
+- etc
+links:
+  install:
+  arch:
+  bugs:
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLScI76b6tD1WyPu2-d_9CCVDr3Fu5jYERthqLKJDUGwqBg7Vcg/viewform
+  
+# Set tier to one of sandbox, tested, or maintained. If empty, the default
+# is sandbox
+# tier: sandbox
+#
+# The following parameters are only used for maintained validated patterns.
+# Do not uncomment them unless your pattern is in the maintained tier.
+# pattern_logo:
+# ci:
+---
+
+:toc:
+:imagesdir: /images
+:_content-type: ASSEMBLY
+
+// Use the include:: directive to add asciidoc modules
+// from the /modules directory. For example:
+// include::modules/my-module.adoc[leveloffset=+1]
+
+== Next steps
+
+*
+*

@@ -1,0 +1,113 @@
+/* AI Templates Custom Styles - Minimal additions to PatternFly */
+
+/* Logo and Brand in Header - DOUBLED in size */
+.pf-c-page__header-brand-link img {
+  max-height: 90px !important;
+  max-width: 90px !important;
+  width: auto;
+  height: auto;
+}
+
+.pf-c-page__header-brand-link span {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* Make sidebar scrollable more obvious */
+.pf-c-page__sidebar-body {
+  max-height: none !important;
+}
+
+.sticky {
+  max-height: calc(100vh - 60px) !important;
+  overflow-y: auto !important;
+  padding-top: 20px !important;
+}
+
+/* Fix sidebar menu text wrapping */
+.pf-c-nav__link {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.4 !important;
+  padding: 8px 16px !important;
+}
+
+.pf-c-nav__subnav .pf-c-nav__link {
+  padding-left: 24px !important;
+}
+
+/* Show scrollbar in sidebar */
+.sticky::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sticky::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sticky::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.sticky::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Force TOC to show - override hiding rules AND ensure it displays in flex layout */
+.pf-c-jump-links,
+aside.pf-c-jump-links {
+  display: block !important;
+  flex: 0 0 auto !important;
+  min-width: 250px !important;
+  max-width: 300px !important;
+}
+
+/* Override the flex-to-block conversion for pages with TOC */
+@media (max-width: 1024px) {
+  .pf-c-page__main-section .pf-u-display-flex {
+    display: flex !important;
+  }
+}
+
+/* Homepage color overrides - better contrast on purple background */
+#hero-section a {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+#hero-section a:hover {
+  color: #f0f0f0 !important;
+}
+
+/* Smaller font sizes throughout */
+body {
+  font-size: 14px !important;
+}
+
+.pf-c-content {
+  font-size: 14px !important;
+}
+
+.pf-c-content p {
+  font-size: 14px !important;
+}
+
+.pf-c-content h1 {
+  font-size: 1.75rem !important;
+}
+
+.pf-c-content h2 {
+  font-size: 1.5rem !important;
+}
+
+.pf-c-content h3 {
+  font-size: 1.25rem !important;
+}
+
+.pf-c-content li {
+  font-size: 14px !important;
+}
+

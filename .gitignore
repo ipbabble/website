@@ -1,0 +1,26 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+public/
+resources/
+.hugo_build.lock
+*~
+*swp
+*swo
+dictionary.dic
+super-linter.log
+tmp/
+Gemfile.lock
+.vscode
+.idea
+.vale
+modules/.vale.ini
+.vale.ini
+
+# Personal workflow files (not for public repo)
+PRE-LAUNCH_CHECKLIST.md
+NEXT_STEPS.md
+SECURITY_AUDIT.md
+MIGRATION_JOURNEY.md
+TAXONOMY_PROPOSAL.md

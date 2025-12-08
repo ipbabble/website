@@ -1,0 +1,65 @@
+<div class="pf-c-page__sidebar">
+  <div class="pf-c-page__sidebar-body">
+    <div class="pf-l-flex filter-title-div">
+      <span class="pf-c-title pf-m-md filter-title pf-l-flex__item pf-m-grow">Filter by</span>
+      <span class="pf-l-flex__item reset-title"><a id="clear_filters" href="#" onclick="clearFilters();return false;">Clear filters</a></span>
+    </div>
+        {{ partial "menu-patterns-browser.html" . }}
+  </div>
+</div>
+
+<main class="pf-c-page__main">
+  <section class="pf-c-page__main-section">
+    <!-- Sidebar toggle for mobile -->
+    <div class="sidebar-toggle-container">
+      {{ partial "sidebar-toggle.html" . }}
+    </div>
+    <div class="pf-l-grid__item pf-m-9-col">
+      <div class="pf-u-text-align-center">
+        <div class="pf-c-content" style="--pf-c-content--FontSize: 1rem;">
+          <h1 class="pf-c-title pf-m-4xl">
+            {{- .Title -}}
+          </h1>
+          <div class="page-abstract">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    <div class="pf-c-content" >
+      {{ $patterns := where $.Pages "Section" "patterns"}}
+      <div class="pf-l-stack pf-m-gutter">
+        <div class="pf-l-stack__item pf-u-text-align-right pattern-count-style">
+          <label class="pf-c-form__label" for="form-vertical-name">
+            <span class="pf-c-form__label-text">Sort:</span>
+          </label>
+          <select
+            class
+            id="select-pattern-sort"
+            name="select-pattern-sort"
+            aria-label="Selector for pattern sort"
+            onchange="filterSelection()"
+          >
+            <option value="atoz" selected>A to Z</option>
+            <option value="ztoa">Z to A</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+        <div class="pf-l-stack__item pf-u-text-align-right pattern-count-style" id="pattern-counter">
+        </div>
+        <div class="pf-l-stack__item pattern-count-style" id="variant-status">
+        </div>
+        <div class="pf-l-stack__item" id="patternLoaderSpinner">
+        </div>
+        <div class="pf-l-stack__item">
+          <div class="pf-l-gallery pf-m-gutter" style="--pf-l-gallery--GridTemplateColumns--min: 300px;" id="patternCards">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div id="debug"></div>
+    <script src="{{ "js/patterns-browser-v2.js" | relURL }}"></script>
+  </section>
+  {{ partial "footer.html" . }}
+</main>

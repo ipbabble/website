@@ -1,0 +1,48 @@
+{{- if (eq .RelPermalink "/patterns/") }}
+
+  {{/* Patterns */}}
+  {{- $patterns := where $.Pages "Section" "patterns"}}
+  {{- $pattern_list := slice }}
+  {{- range $index, $pattern :=  $patterns.ByTitle }}
+    {{- $object := dict "Name" $pattern.LinkTitle "Link" $pattern.RelPermalink "Params" $pattern.Params -}}
+    {{- $pattern_list = $pattern_list | append $object -}}
+  {{- end }}
+
+  {{/* Red Hat Products */}}
+  {{- $rh_products := .Site.Taxonomies.rh_products }}
+  {{- $rh_products_list := slice }}
+  {{- range $index, $rh_product :=  $rh_products.Alphabetical }}
+    {{- $rh_products_list = $rh_products_list | append (dict "Name" $rh_product.Name "LinkTitle" $rh_product.Page.LinkTitle) }}
+  {{- end }}
+  {{- $rh_products_filter_types := slice "AND" "OR" }}
+  {{- $rh_products_dict := dict "filter_list" $rh_products_list "filter_types" $rh_products_filter_types }}
+
+  {{/* Partners */}}
+  {{- $partners := .Site.Taxonomies.partners }}
+  {{- $partners_list := slice }}
+  {{- range $index, $partners :=  $partners.Alphabetical }}
+    {{- $partners_list = $partners_list | append (dict "Name" $partners.Name "LinkTitle" $partners.Page.LinkTitle) }}
+  {{- end }}
+  {{- $partners_filter_types := slice "AND" "OR" }}
+  {{- $partners_dict := dict "filter_list" $partners_list "filter_types" $partners_filter_types }}
+
+  {{/* Industries */}}
+  {{- $industries := .Site.Taxonomies.industries }}
+  {{- $industries_list := slice }}
+  {{- range $index, $industry :=  $industries.Alphabetical }}
+    {{- $industries_list = $industries_list | append (dict "Name" $industry.Name "LinkTitle" $industry.Page.LinkTitle) }}
+  {{- end }}
+  {{- $industries_filter_types := slice "AND" "OR" }}
+  {{- $industries_dict := dict "filter_list" $industries_list "filter_types" $industries_filter_types }}
+
+  {{/* Tiers */}}
+  {{- $tiers_list := slice -}}
+  {{- $tiers_list = $tiers_list | append (dict "Name" "maintained" "LinkTitle" "Maintained" "color" "green") }}
+  {{- $tiers_list = $tiers_list | append (dict "Name" "tested" "LinkTitle" "Tested" "color" "blue") }}
+  {{- $tiers_list = $tiers_list | append (dict "Name" "sandbox" "LinkTitle" "Sandbox" "color" "oragne") }}
+  {{- $tiers_filter_types := slice "OR" }}
+  {{- $tiers_dict := dict "filter_list" $tiers_list "filter_types" $tiers_filter_types }}
+
+  {{- $filter_categories := dict "rh_products" $rh_products_dict "partners" $partners_dict "industries" $industries_dict "tier" $tiers_dict -}}
+  {{- dict "patterns" $pattern_list "filter_categories" $filter_categories | jsonify }}
+{{- end }}

@@ -1,0 +1,89 @@
+:_content-type: CONCEPT
+:imagesdir: ../../images
+
+[id="contributing-to-docs-tools-and-setup"]
+= Install and set up the tools and software
+
+== Create a GitHub account
+Before you can contribute to Validated Patterns documentation, you must
+https://www.github.com/join[sign up for a GitHub account].
+
+== Set up authentication
+When you have your account set up, follow the instructions to
+https://help.github.com/articles/generating-ssh-keys/[generate and set up SSH
+keys on GitHub] for authentication between your workstation and GitHub.
+
+Confirm authentication is working correctly with the following command:
+
+[source,terminal]
+----
+$ ssh -T git@github.com
+----
+
+== Fork and clone the Validated Patterns documentation repository
+
+You must fork and set up the Validated Patterns documentation repository on your workstation so that you can create PRs and contribute. These steps must only be performed during initial setup.
+
+. Fork the https://github.com/validatedpatterns/docs repository into your
+GitHub account from the GitHub UI. Click *Fork* in the upper right-hand corner.
+
+. In the terminal on your workstation, change into the directory where you want
+to clone the forked repository.
+
+.  Clone the forked repository onto your workstation with the following
+command, replacing _<user_name>_ with your actual GitHub username.
++
+[source,terminal]
+----
+$ git clone git@github.com:<user_name>/docs.git
+----
+
+. Change into the directory for the local repository you just cloned.
++
+[source,terminal]
+----
+$ cd docs
+----
+
+. Add an upstream pointer back to the Validated Patterns's remote repository, in this
+case _docs_.
++
+[source,terminal]
+----
+$ git remote add upstream git@github.com:validatedpatterns/docs.git
+----
+
+This ensures that you are tracking the remote repository to keep your local
+repository in sync with it.
+
+== Install Asciidoctor
+
+The Validated Patterns documentation is created in AsciiDoc language, and is processed with http://asciidoctor.org/[AsciiDoctor], which is an AsciiDoc language processor.
+
+=== Prerequisites
+
+The following are minimum requirements:
+
+* A bash shell environment (Linux and OS X include a bash shell environment)
+* A web browser (Mozilla Firefox, Google Chrome, or Safari)
+* https://docs.asciidoctor.org/asciidoctor/latest/tooling/#web-browser-add-ons-preview-only[Web browser add-ons (preview only)]
+* An editor that can strip trailing whitespace
+* An https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor installer]
+
+=== Preview the documentation using a container image
+
+You can use the container image to build the Validated Patterns documentation, locally. To do so, ensure that you have installed the `make` and `podman` tools.
+
+ * In the terminal window, navigate to the local instance of the `validatedpatterns/docs` repository and run the following command:
+
+[source,terminal]
+----
+$ make serve
+----
+
+.Verification
+A preview is available on your browser at `localhost:4000`.
+//to-do: Add instructions to "Install Hugo"
+
+
+

@@ -1,0 +1,55 @@
+{{ define "main" }}
+  {{ $section := .Site.GetPage "section" .Section }}
+  <div class="pf-c-page__sidebar">
+    <div class="pf-c-page__sidebar-body">
+      {{ partial "menu-tools.html" . }}
+    </div>
+  </div>
+  <main class="pf-c-page__main" tabindex="0" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="50">
+    <section class="pf-c-page__main-section pf-m-fill">
+      <!-- Sidebar toggle for mobile -->
+      <div class="sidebar-toggle-container">
+        {{ partial "sidebar-toggle.html" . }}
+      </div>
+      <div class="pf-u-display-flex">
+        <div class="pf-c-content min-height">
+          <h1>{{ .Title }}</h1>
+          {{ if .Description }}
+          <p class="page-abstract">{{ .Description }}</p>
+          {{ end }}
+          {{ .Content }}
+
+          <!-- Page Navigation -->
+          {{ partial "page-navigation.html" . }}
+
+          <!-- Edit this page and documentation issue section -->
+          <div class="pf-u-mt-lg pf-u-pt-lg">
+            <div class="pf-u-display-flex pf-u-justify-content-space-between pf-u-align-items-center pf-u-flex-wrap">
+              <!-- Edit this page button -->
+              {{ if .File }}
+              <a href="https://github.com/redhat-data-and-ai/aipatterns/blob/main/content/{{ .File.Path }}"
+                 class="pf-c-button pf-m-link"
+                 target="_blank"
+                 rel="noopener">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                Edit this page
+              </a>
+              <!-- Documentation issue button -->
+              <a href="https://github.com/redhat-data-and-ai/aipatterns/issues/new?title=Docs:%20{{ .Title | urlquery }}&body=Page:%20{{ .Permalink | urlquery }}"
+                 class="pf-c-button pf-m-link"
+                 target="_blank"
+                 rel="noopener">
+                <i class="fas fa-bug" aria-hidden="true"></i>
+                Open a documentation issue
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+          {{ partial "toc.html" . }}
+      </div>
+    </section>
+    {{ partial "footer.html" . }}
+  </main>
+{{ end }}
+

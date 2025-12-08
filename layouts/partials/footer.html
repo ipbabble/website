@@ -1,0 +1,82 @@
+<section id="prefooter" class="pf-c-page__main-section footer-dark">
+    <div class="pf-l-grid prefooter-menu-grid">
+        <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-6-col-on-md pf-m-offset-1-col-on-md pf-u-mb-lg pf-u-mb-0-on-sm">
+            <div class="pf-l-grid pf-u-py-xl">
+                <div class="pf-l-grid__item pf-m-6-col-on-sm pf-m-4-col-on-md pf-u-ml-md pf-u-ml-0-on-md pf-u-mb-xl pf-u-mb-0-on-md">
+                    <p class="pf-c-title footer-menu-title">QUICKLINKS</p>
+                    <nav aria-label="Quick Links">
+                        <ul class="pf-c-list pf-m-plain">
+                            <li>
+                                <i class="prefooter-icon fa-brands fa-github"></i>
+                                <a class="footer-link" aria-label="GitHub organization" href="https://github.com/redhat-data-and-ai">GitHub Organization</a>
+                            </li>
+                            <li>
+                                <i class="prefooter-icon fas fa-cube"></i>
+                                <a class="footer-link" aria-label="Available templates" href="/templates">Available Templates</a>
+                            </li>
+                            <li>
+                                <i class="prefooter-icon fas fa-tools"></i>
+                                <a class="footer-link" aria-label="AI Tools" href="/tools">AI Tools</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="pf-l-grid__item pf-m-6-col-on-sm pf-m-4-col-on-md pf-u-mt-lg pf-u-mt-0-on-sm pf-u-ml-md pf-u-ml-0-on-md pf-u-mb-xl pf-u-mb-0-on-md">
+                    <p class="pf-c-title footer-menu-title">CONTRIBUTE</p>
+                    <nav aria-label="Contribute">
+                        <ul class="pf-c-list pf-m-plain">
+                            <li>
+                                <i class="prefooter-icon fas fa-pen"></i>
+                                <a class="footer-link" href="/contribute/contributing-docs/">Documentation</a>
+                            </li>
+                            <li>
+                                <i class="prefooter-icon fas fa-code"></i>
+                                <a class="footer-link" href="/contribute/contributing-templates/">Templates</a>
+                            </li>
+                            <li>
+                                <i class="prefooter-icon fas fa-vial"></i>
+                                <a class="footer-link" href="/contribute/testing-standards/">Testing</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="pf-l-grid__item pf-m-6-col-on-sm pf-m-4-col-on-md pf-u-mt-lg pf-u-mt-0-on-md pf-u-ml-md pf-u-ml-0-on-md">
+                    <p class="pf-c-title footer-menu-title">STAY IN TOUCH ⚠️</p>
+                    <nav aria-label="Stay in touch">
+                        <ul class="pf-c-list pf-m-plain">
+                            <li>
+                                <i class="prefooter-icon fa-brands fa-github"></i>
+                                <a href="https://github.com/orgs/redhat-data-and-ai/discussions" class="footer-link" target="_blank" aria-label="GitHub Discussions">GitHub Discussions</a>
+                            </li>
+                            <li style="opacity: 0.5;">
+                                <i class="prefooter-icon fa-brands fa-slack"></i>
+                                <span class="footer-link" style="cursor: default;">Slack (Coming Soon)</span>
+                            </li>
+                            <li style="opacity: 0.5;">
+                                <i class="prefooter-icon fas fa-envelope"></i>
+                                <span class="footer-link" style="cursor: default;">Mailing List (Coming Soon)</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-4-col-on-md">
+            <div class="pf-l-grid pf-u-pt-xl">
+                <div class="pf-l-grid__item pf-u-px-xl">
+                    <a class="pf-c-page__header-brand-link pf-c-brand pf-u-pb-md" href="/">
+                        <img class="pf-c-brand" src="/images/ai-templates-logo.png" alt="AI Templates" style="max-width: 200px;">
+                    </a>
+                    <p class="footer-link">AI Templates are production-ready components for building AI applications on Kubernetes. Open source templates for MCP servers, AI agents, and chat interfaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="footer" class="footer-dark pf-m-no-fill pf-l-flex pf-m-justify-content-center pf-m-align-items-center footer-center">
+        <div class="pf-l-flex__item pf-u-text-align-center">
+            <span class="site-copyright">Copyright &copy; {{ now.Year }} Red Hat, Inc. Licensed under Apache 2.0. All third-party trademarks are the property of their respective owners.</span>
+        </div>
+        <script src="{{ "js/bootstrap.bundle.js" | relURL }}"></script>
+        {{ partial "search-index.html" . }}
+</footer>

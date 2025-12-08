@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="pf-c-page__sidebar" id="sidebar">
+  <div class="pf-c-page__sidebar-body">
+    <div class="pf-l-flex filter-title-div">
+      <span class="pf-c-title pf-m-md filter-title pf-l-flex__item pf-m-grow">Filter by</span>
+    </div>
+      {{ partial "tags-blog.html" . }}
+  </div>
+</div>
+
+<main class="pf-c-page__main" id="maincontent">
+  <section class="pf-c-page__main-section">
+    <!-- Sidebar toggle for mobile -->
+    <div class="sidebar-toggle-container">
+      {{ partial "sidebar-toggle.html" . }}
+    </div>
+    <div class="pf-l-grid__item pf-m-9-col">
+      <div class="pf-u-text-align-center">
+        <div class="pf-c-content" style="--pf-c-content--FontSize: 1rem;">
+          <h1 class="pf-c-title pf-m-4xl">
+            {{- .Title -}}
+        </h1>
+        <div class="page-abstract">
+          {{ .Content }}
+        </div>
+        </div>
+      </div>
+      <div class="pf-c-content" >
+        {{ $section := where $.Paginator.Pages "Section" "blog"}}
+        {{ range $section }}
+          <div >
+            {{ .Render "summary" }}
+          </div>
+        {{ end }}
+        {{ partial "paginator.html" . }}
+      </div>
+  </section>
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}

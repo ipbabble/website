@@ -1,0 +1,395 @@
+# AI Templates Documentation Site - Cursor Rules
+
+## Project Overview
+
+This is a Hugo-based documentation site for AI Templates, using the PatternFly theme.
+- **Site:** AI Templates (open source AI application templates)
+- **Based on:** Validated Patterns theme/layout (modified extensively)
+- **Tech:** Hugo 0.147+, Asciidoctor, PatternFly CSS
+- **Deployment:** GitHub Pages via GitHub Actions
+- **Repository:** https://github.com/ipbabble/aitemplates-site (staging) → https://github.com/redhat-data-and-ai/docs (future)
+
+## Critical Hugo Server Management
+
+### ALWAYS Check and Kill Before Starting
+
+Hugo server instances persist and cause conflicts. **ALWAYS** follow this pattern:
+
+```bash
+# 1. Kill any running Hugo servers
+pkill -9 -f "hugo server"
+sleep 2
+
+# 2. Clear caches
+rm -rf public/ resources/
+
+# 3. Start fresh
+./serve.sh
+```
+
+The `serve.sh` script already does this, but if starting Hugo manually, always kill first!
+
+### Browser Cache Issues
+
+- **Chrome:** Very aggressive caching - hard refresh (Cmd+Shift+R) may not work
+- **Safari:** Better for development, but still caches aggressively
+- **Solution:** Use cache-busting in CSS (`?v=timestamp`) or close tabs completely
+
+## File Structure
+
+```
+aipatterns/
+├── content/               # All documentation (Markdown)
+│   ├── templates/        # Template docs (MCP Server, Agent, UI)
+│   ├── tools/            # AI tool setup guides
+│   ├── contribute/       # Contribution guidelines
+│   ├── guides/           # Tutorials (placeholder)
+│   └── reference/        # Technical reference (placeholder)
+├── layouts/              # Hugo templates
+│   ├── templates/        # Template section layouts
+│   ├── tools/            # Tools section layouts
+│   ├── contribute/       # Contribute section layouts
+│   └── partials/         # Reusable components (menus, footer, etc.)
+├── static/
+│   ├── css/
+│   │   ├── custom.css              # Validated Patterns original (don't modify!)
+│   │   └── ai-templates-custom.css # Our overrides (modify this!)
+│   └── images/           # Logos, assets
+└── themes/patternfly/    # Theme (don't modify)
+```
+
+## Content Guidelines
+
+### Format: Markdown (Not AsciiDoc)
+
+**Decision:** Keep content in Markdown for now
+- Faster to write and edit
+- Works well with the theme
+- Can convert to AsciiDoc later if Red Hat requires it
+
+### No Emojis in Content
+
+**Rule:** No emojis in headings, TOC, or professional content
+- ✅ OK in code comments for clarity (`# ✅ Use def`)
+- ❌ Never in headings or section titles
+- ❌ Never in TOC entries
+
+### Shortcodes Available
+
+```markdown
+{{< info >}}
+Important information
+{{< /info >}}
+
+{{< tip >}}
+Helpful tip
+{{< /tip >}}
+
+{{< warning >}}
+Warning message
+{{< /warning >}}
+
+{{< danger >}}
+Critical warning
+{{< /danger >}}
+
+{{< mermaid >}}
+graph TD
+    A --> B
+{{< /mermaid >}}
+```
+
+### Internal References
+
+- **No internal Red Hat URLs** - All sanitized
+- **Use relative paths** - `/templates/mcp-server/` not full URLs
+- **Check broken links** - All links must resolve to real pages or external sites
+
+## Layout Patterns
+
+### Each Section Needs:
+
+1. **Contextual sidebar menu** - `layouts/partials/menu-{section}.html`
+2. **List layout** - `layouts/{section}/list.html` (for section overview with cards)
+3. **Single layout** - `layouts/{section}/single.html` (for individual pages)
+
+### Three-Column Layout
+
+All documentation pages use:
+```
+[Sidebar] [Main Content] [TOC]
+```
+
+- **Sidebar:** Contextual navigation for current section only
+- **Content:** Main markdown content with title at top
+- **TOC:** Table of contents (auto-generated from headings)
+
+### Card Grids
+
+Section overview pages (Templates, Tools, Contribute) use consistent card layout:
+- 3-column grid on desktop
+- Responsive (2-col tablet, 1-col mobile)
+- Same styling across all sections
+- Cards match template in `layouts/templates/list.html`
+
+## CSS Management
+
+### DO NOT modify `static/css/custom.css`
+
+This is the original Validated Patterns CSS. Modifications will be overwritten or cause conflicts.
+
+### DO modify `static/css/ai-templates-custom.css`
+
+This loads LAST and overrides with `!important` when needed.
+
+**Common patterns:**
+```css
+/* Force override */
+.some-class {
+  property: value !important;
+}
+
+/* Media queries for responsive */
+@media (max-width: 768px) {
+  /* Mobile styles */
+}
+```
+
+### CSS Load Order
+
+1. PatternFly SCSS (compiled)
+2. PatternFly addons SCSS (compiled)
+3. `custom.css` (Validated Patterns)
+4. `ai-templates-custom.css` (OUR overrides) ← Modify this one!
+
+## Page Structure
+
+### Frontmatter Requirements
+
+```markdown
+---
+title: "Page Title"
+weight: 10              # Lower = appears first
+description: "Short description for cards"
+github_repo: "https://github.com/org/repo"  # Optional
+---
+```
+
+### Page Template
+
+```markdown
+---
+title: "Page Title"
+weight: 5
+description: "One-line description"
+---
+
+# Page Title (will be auto-added by layout, don't duplicate)
+
+Intro paragraph here.
+
+## Section Heading
+
+Content here.
+
+{{< tip >}}
+Helpful information
+{{< /tip >}}
+
+## Next Section
+
+More content.
+```
+
+## Development Workflow
+
+### Making Content Changes
+
+1. Edit markdown files in `content/`
+2. Hugo auto-reloads (watch terminal for rebuild)
+3. Refresh browser (hard refresh if CSS changes)
+4. Verify changes look correct
+
+### Making Layout Changes
+
+1. Edit layouts in `layouts/`
+2. Hugo rebuilds automatically
+3. **Close and reopen browser tab** (layouts are heavily cached)
+4. Verify changes
+
+### Making CSS Changes
+
+1. Edit `static/css/ai-templates-custom.css` ONLY
+2. Hugo syncs the file
+3. **Hard refresh browser** (Cmd+Shift+R) or close tab completely
+4. CSS has cache-busting timestamp, but browsers still aggressive
+
+### Adding New Sections
+
+When adding a new section (e.g., `/guides/`):
+
+1. Create `content/guides/_index.md`
+2. Copy `layouts/templates/` to `layouts/guides/`
+3. Create `layouts/partials/menu-guides.html`
+4. Update the list and single layouts to use `menu-guides.html`
+5. Test navigation works
+
+## Deployment
+
+### Local Testing
+
+```bash
+# Always use the serve script
+./serve.sh
+
+# Site at http://localhost:1313/
+```
+
+### Production Build
+
+```bash
+# Build static site
+hugo --cleanDestinationDir --minify
+
+# Output in public/
+# Deploy public/ to hosting
+```
+
+### GitHub Pages
+
+Push to `main` branch triggers automatic deployment via `.github/workflows/deploy.yml`
+
+**Live URL:** https://ipbabble.github.io/aitemplates-site/
+**Future:** https://redhat-data-and-ai.github.io/docs/ (or /site)
+
+## Common Tasks
+
+### Add a New Template Page
+
+1. Create `content/templates/new-template/_index.md`
+2. Set weight, title, description
+3. Add to sidebar - it auto-appears in menu
+4. Test navigation
+
+### Add a New Tool Guide
+
+1. Create `content/tools/new-tool.md`
+2. Set weight (lower = appears first)
+3. Add description for card display
+4. Auto-appears in Tools listing
+
+### Fix Broken Links
+
+1. Check `PLACEHOLDER_TRACKING.md` for known placeholders
+2. Search for the broken link path
+3. Update to correct path or mark as placeholder
+4. Test link works
+
+### Update Branding
+
+- **Logo:** Replace `static/images/ai-templates-logo.png`
+- **Favicon:** Regenerate with `sips` commands (see DEPLOYMENT.md)
+- **Colors:** Edit gradients in `layouts/index.html`
+- **Header text:** Already dynamic from `config.yaml` title
+
+## Troubleshooting
+
+### Site won't start
+- Kill all Hugo processes: `pkill -9 -f hugo`
+- Check port: `lsof -i :1313`
+- Clear caches: `rm -rf public/ resources/`
+
+### Changes not appearing
+- Hard refresh browser (Cmd+Shift+R)
+- Close tab completely and reopen
+- Check Hugo terminal for rebuild messages
+- Verify file saved correctly
+
+### Layout broken
+- Check for typos in layout files
+- Verify partial exists (e.g., `menu-templates.html`)
+- Check Hugo error messages in terminal
+- Compare with working section layout
+
+### CSS not applying
+- Verify editing `ai-templates-custom.css` (not `custom.css`)
+- Check CSS loads last (see head.html)
+- Use `!important` if being overridden
+- Close browser tab completely
+
+## Key Decisions & Rationale
+
+### Why Markdown (not AsciiDoc)?
+- Source content was Markdown
+- Faster to migrate
+- More familiar to contributors
+- Can convert later if needed
+See: `docs/archive/MARKDOWN_VS_ASCIIDOC_ANALYSIS.md`
+
+### Why These Colors?
+- Purple gradient: AI, intelligence, innovation
+- Green/teal: Open source, growth, community
+- Professional but modern aesthetic
+
+### Why Three-Column Layout?
+- Matches Validated Patterns UX
+- Professional documentation standard
+- Left: Navigation context
+- Center: Main content
+- Right: Quick page navigation (TOC)
+
+## Reference Documentation
+
+- **MIGRATION_JOURNEY.md** - Complete history and decisions
+- **PLACEHOLDER_TRACKING.md** - What's complete vs placeholder
+- **DEPLOYMENT.md** - How to deploy
+- **SHORTCODE_CONVERSION.md** - Shortcode reference
+- **PRE-LAUNCH_CHECKLIST.md** - Review before major changes
+- **LOGO_GENERATION_PROMPT.md** - Logo design guidance
+
+## Best Practices Summary
+
+1. **Always kill Hugo before starting** - Prevents conflicts
+2. **Edit ai-templates-custom.css only** - Don't touch custom.css
+3. **No emojis in headings** - Keep it professional
+4. **Test at multiple sizes** - Mobile, tablet, desktop
+5. **Use cache-busting** - Close tabs for CSS/layout changes
+6. **Follow existing patterns** - Look at working sections before creating new ones
+7. **Document placeholders** - Update PLACEHOLDER_TRACKING.md
+8. **Commit often** - Small, focused commits
+
+## Quick Commands
+
+```bash
+# Start development server
+./serve.sh
+
+# Build for production
+hugo --cleanDestinationDir --minify
+
+# Kill Hugo processes
+pkill -9 -f "hugo server"
+
+# Check what's running
+ps aux | grep hugo
+
+# Test a build
+hugo
+
+# Clear caches
+rm -rf public/ resources/
+```
+
+## Contributing
+
+When making changes:
+1. Follow this .cursorrules file
+2. Test locally before committing
+3. Check PRE-LAUNCH_CHECKLIST.md for major changes
+4. Update PLACEHOLDER_TRACKING.md if filling placeholders
+5. Keep MIGRATION_JOURNEY.md updated for major milestones
+
+---
+
+**This file helps AI assistants and developers understand the project context and best practices.**
+

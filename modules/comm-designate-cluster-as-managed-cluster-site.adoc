@@ -1,0 +1,47 @@
+:_content-type: PROCEDURE
+:imagesdir: ../../images
+
+[id="designate-cluster-as-a-managed-cluster-site"]
+= Designate the new cluster as a managed cluster site
+
+If you use the command line tools such as `clusteradm` or `cm-cli`, you must explicitly indicate that the imported cluster is part of a specific `clusterGroup`. Some examples of `clusterGroup` are `factory`, `devel`, or `prod`.
+
+To tag the cluster as `clusterGroup=<managed-cluster-group>`, complete the following steps.
+
+.Procedure
+
+. To list all managed clusters, run the following command:
++
+[source,terminal]
+----
+$ oc get managedcluster.cluster.open-cluster-management.io
+----
++
+This will display a list of managed clusters registered in ACM, including their names and statuses.
+
+. Once you identify the target cluster for example `YOURCLUSTER`, label it with the desired key-value pair to associate it with a group or category. To apply the label, run the following command:
++
+[source,terminal]
+----
+$ oc label managedcluster.cluster.open-cluster-management.io/YOURCLUSTER site=managed-cluster
+----
+
+.Verification
+
+. Confirm that the label was applied by running the following command: 
++
+[source,terminal]
+----
+$ oc get managedcluster.cluster.open-cluster-management.io/YOURCLUSTER --show-labels
+----
++
+This will display the labels associated with the cluster, verifying that the new label has been successfully added..
+
+. Optional: If you’re grouping clusters under a clusterGroup for example `factory`, `devel`, or `prod`, add the clusterGroup label also by running the following command:
++
+[source,terminal]
+----
+$ oc label managedcluster.cluster.open-cluster-management.io/YOURCLUSTER clusterGroup=<group-name>
+----
++
+Replace `<group-name>` with the appropriate value, such as `factory`.

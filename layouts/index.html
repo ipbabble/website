@@ -1,0 +1,96 @@
+{{ define "main" }}
+<main class="pf-c-page__main">
+  <!-- Hero Section -->
+  <section id="hero-section" class="pf-c-page__main-section pf-m-light" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem 0;">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-10-col-on-md pf-m-offset-1-col-on-md pf-m-8-col-on-lg pf-m-offset-2-col-on-lg">
+        <div class="pf-c-content" style="color: white;">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Templates Section -->
+  <section class="pf-c-page__main-section">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-10-col-on-md pf-m-offset-1-col-on-md pf-m-10-col-on-lg pf-m-offset-1-col-on-lg pf-u-py-xl">
+        <div class="pf-c-content pf-u-text-align-center pf-u-mb-lg">
+          <h2 class="pf-c-title pf-m-3xl">Featured Templates</h2>
+          <p class="pf-u-color-dark-200">Production-ready components for building AI applications</p>
+        </div>
+
+        <div class="pf-l-grid pf-m-gutter">
+          <!-- MCP Server Template -->
+          <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-6-col-on-md pf-m-4-col-on-lg">
+            <div class="pf-c-card pf-u-p-lg pf-u-h-100">
+              <div class="pf-c-card__body">
+                <h3 class="pf-c-title pf-m-lg pf-u-mb-sm">
+                  <i class="fas fa-cube pf-u-mr-sm pf-u-color-primary-color-100"></i>
+                  MCP Server Template
+                </h3>
+                <p class="pf-u-color-dark-200 pf-u-mb-md">Build Model Context Protocol servers that extend AI agent capabilities with specialized tools and integrations.</p>
+                <div class="pf-u-border-top pf-u-pt-md pf-u-mt-md">
+                  <a href="/templates/mcp-server/" class="pf-c-button pf-m-link pf-m-inline">Learn more →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agent Template -->
+          <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-6-col-on-md pf-m-4-col-on-lg">
+            <div class="pf-c-card pf-u-p-lg pf-u-h-100">
+              <div class="pf-c-card__body">
+                <h3 class="pf-c-title pf-m-lg pf-u-mb-sm">
+                  <i class="fas fa-robot pf-u-mr-sm pf-u-color-blue-300"></i>
+                  Agent Template
+                </h3>
+                <p class="pf-u-color-dark-200 pf-u-mb-md">Create LangGraph-based AI agents with enterprise security, observability, and production-ready deployment configs.</p>
+                <div class="pf-u-border-top pf-u-pt-md pf-u-mt-md">
+                  <a href="https://github.com/redhat-data-and-ai/template-agent" class="pf-c-button pf-m-link pf-m-inline">View on GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- UI Template -->
+          <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-6-col-on-md pf-m-4-col-on-lg">
+            <div class="pf-c-card pf-u-p-lg pf-u-h-100">
+              <div class="pf-c-card__body">
+                <h3 class="pf-c-title pf-m-lg pf-u-mb-sm">
+                  <i class="fas fa-desktop pf-u-mr-sm pf-u-color-green-400"></i>
+                  UI Template
+                </h3>
+                <p class="pf-u-color-dark-200 pf-u-mb-md">Deploy modern chat interfaces built with React and FastAPI that work seamlessly with our agent template.</p>
+                <div class="pf-u-border-top pf-u-pt-md pf-u-mt-md">
+                  <a href="https://github.com/redhat-data-and-ai/template-ui" class="pf-c-button pf-m-link pf-m-inline">View on GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="pf-c-page__main-section" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+    <div class="pf-l-grid">
+      <div class="pf-l-grid__item pf-m-12-col-on-sm pf-m-8-col-on-md pf-m-offset-2-col-on-md pf-m-8-col-on-lg pf-m-offset-2-col-on-lg pf-u-py-2xl pf-u-text-align-center">
+        <div class="pf-c-content">
+          <h2 class="pf-c-title pf-m-3xl pf-u-mb-md" style="color: white;">Ready to build?</h2>
+          <p class="pf-u-font-size-lg pf-u-mb-lg" style="color: white;">
+            Start with our templates and deploy production-ready AI applications in hours, not weeks.
+          </p>
+          <div class="pf-u-mt-xl">
+            <a href="/templates/" class="pf-c-button pf-m-primary pf-m-display-lg pf-u-m-md" style="min-width: 200px; background: white; color: #11998e; border: none;">Browse Templates</a>
+            <a href="https://github.com/redhat-data-and-ai" class="pf-c-button pf-m-secondary pf-m-display-lg pf-u-m-md" style="min-width: 200px; background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "footer.html" . }}
+</main>
+{{ end }}

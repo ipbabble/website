@@ -1,0 +1,59 @@
+baseURL: "https://aitemplates.io/"
+languageCode: "en-us"
+title: AI Templates
+theme: "patternfly"
+summaryLength: 20
+timeout: 300
+pagination:
+  pagerSize: 6
+params:
+  site_logo: /images/ai-templates-logo.png
+security:
+  exec:
+    allow: ["^dart-sass-embedded$", "^go$", "^npx$", "^postcss$", "^asciidoctor$"]
+    osEnv: (?i)^(GEM_PATH)$
+
+markup:
+  asciidocExt:
+    attributes: {allow-uri-read, source-highlighter: rouge, icons: font, sectanchors, showtitle}
+    safeMode: unsafe
+    imagesdir: images
+  tableOfContents:
+    startLevel: 1
+    endLevel: 3
+    ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
+
+taxonomies:
+  template_type: 'template_types'
+  use_case: 'use_cases'
+  tag: 'tags'
+
+mediaTypes:
+  application/json:
+    suffixes:
+    - json
+
+outputFormats:
+  templates:
+    mediatype: application/json
+
+menus:
+  main:
+    - name: Templates
+      url: /templates/
+      weight: 10
+    - name: Tools
+      url: /tools/
+      weight: 20
+    - name: Guides
+      url: /guides/
+      weight: 30
+    - name: Reference
+      url: /reference/
+      weight: 40
+    - name: GitHub
+      url: https://github.com/redhat-data-and-ai
+      weight: 50
