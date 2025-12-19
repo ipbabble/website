@@ -91,7 +91,7 @@ Now that the basic agent is working, customize it:
 - **Deploy to production**: Follow the Kubernetes deployment guides in the repository
 - **Add more MCP servers**: Connect to additional MCP servers for more capabilities
 - **Build a UI**: Add the [UI Template](/templates/ui/) for a chat interface
-- **Join the community**: [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **Join the community**: [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 
 {{< tip >}}
 **Pro Tip**: Start with simple, single-step agent workflows and gradually add complexity. Test each addition before moving to the next feature.

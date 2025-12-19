@@ -166,7 +166,7 @@ Adjust based on load:
 - **Scale as needed**: Adjust resources based on usage
 - **Update regularly**: Deploy new versions safely
 
-For deployment questions, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For deployment questions, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 
 
 

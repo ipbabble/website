@@ -19,7 +19,7 @@ This section will include:
 
 For now, check out the detailed documentation in each template section.
 
-For questions, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For questions, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 
 
 

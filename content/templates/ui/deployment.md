@@ -246,7 +246,7 @@ Monitor key metrics:
 - **Iterate**: Improve based on real usage
 - **Scale**: Adjust resources as traffic grows
 
-For deployment questions, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For deployment questions, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 
 
 

@@ -53,5 +53,5 @@ graph TD
 All templates are open source and available on [GitHub](https://github.com/redhat-data-and-ai). Contributions are welcome!
 
 **License:** Apache 2.0  
-**Community:** [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)  
+**Community:** [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)  
 **Issues:** Report issues in individual template repositories

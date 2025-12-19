@@ -494,7 +494,7 @@ When you're ready to deploy your MCP server to production:
 
 ### Need Help?
 
-- **GitHub Discussions**: [Ask questions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **GitHub Discussions**: [Ask questions](https://github.com/redhat-data-and-ai/website/discussions)
 - **Template Issues**: [Report issues](https://github.com/redhat-data-and-ai/template-mcp-server/issues)
 
 ## Why This Approach Works

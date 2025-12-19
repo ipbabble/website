@@ -247,7 +247,7 @@ Cursor will:
 
 - **Build your first MCP server**: [MCP Server Template](/templates/mcp-server/)
 - **Create an AI agent**: [Agent Template](https://github.com/redhat-data-and-ai/template-agent)
-- **Join the community**: [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **Join the community**: [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 
 {{< tip >}}
 **Pro Tip**: Create a `.cursorrules` file in your project root to give Cursor context about your MCP server patterns, coding standards, and best practices!

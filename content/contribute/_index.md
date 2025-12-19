@@ -6,8 +6,6 @@ menu:
     name: Contribute
 ---
 
-# Contribute to AI Templates
-
 Find out how you can contribute to the AI Templates project.
 
 ## How to Contribute
@@ -21,7 +19,7 @@ We welcome contributions from the community! Here's how you can help:
 - **Submit feedback**: Report issues or suggest improvements
 
 **How to contribute docs:**
-1. Fork the [aipatterns repository](https://github.com/redhat-data-and-ai/website)
+1. Fork the [AI Templates website repository](https://github.com/redhat-data-and-ai/website)
 2. Make your changes
 3. Submit a pull request
 
@@ -31,14 +29,23 @@ We welcome contributions from the community! Here's how you can help:
 - **Share use cases**: Document how you're using the templates
 - **Contribute examples**: Share your implementations
 
-**Template repositories:**
-- [template-mcp-server](https://github.com/redhat-data-and-ai/template-mcp-server)
-- [template-agent](https://github.com/redhat-data-and-ai/template-agent)
-- [template-ui](https://github.com/redhat-data-and-ai/template-ui)
+**How to contribute to a template:**
+1. Fork the template repository you want to contribute to
+2. Clone your fork locally: `git clone git@github.com:YOUR-USERNAME/TEMPLATE-REPO.git`
+3. Create a branch for your changes: `git checkout -b my-feature`
+4. Make your changes and test locally
+5. Push to your fork and submit a pull request
+
+**Current template repositories:**
+- [template-mcp-server](https://github.com/redhat-data-and-ai/template-mcp-server) - MCP server template
+- [template-agent](https://github.com/redhat-data-and-ai/template-agent) - AI agent template
+- [template-ui](https://github.com/redhat-data-and-ai/template-ui) - Chat UI template
+
+More templates may be added over time. See [aitemplates.io/templates](/templates/) for documentation or the [redhat-data-and-ai GitHub organization](https://github.com/redhat-data-and-ai) for source code.
 
 ### Community
 
-- **Answer questions**: Help others in [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **Answer questions**: Help others in [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 - **Share your projects**: Show what you've built
 - **Report issues**: File bugs or feature requests
 
@@ -67,7 +74,7 @@ When writing documentation:
 
 ## Get Help
 
-- **Questions**: [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **Questions**: [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 - **Issues**: File in the appropriate repository
 - **Ideas**: Share in Discussions for community feedback
 

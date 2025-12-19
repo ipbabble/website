@@ -1,0 +1,27 @@
+<nav class="pf-c-nav pf-m-light sticky" aria-label="Guides navigation">
+  <ul class="pf-c-nav__list">
+    <li class="pf-c-nav__item">
+      <a href="/guides/" class="pf-c-nav__link">
+        <span class="pf-c-icon pf-m-md pf-m-inline">
+          <span class="pf-c-icon__content">
+            <i class="fas fa-angle-left" aria-hidden="true"></i>
+          </span>
+        </span>
+        <span style="padding-left: 10px;">Back to Guides</span>
+      </a>
+    </li>
+
+    {{ $currentPage := . }}
+    {{ $guidesSection := .Site.GetPage "/guides" }}
+    
+    <!-- List all guides pages -->
+    {{ range $guidesSection.Pages.ByWeight }}
+    <li class="pf-c-nav__item">
+      <a href="{{ .RelPermalink }}" 
+         class="pf-c-nav__link {{ if eq $currentPage . }}pf-m-current{{ end }}">
+        <span class="wrappable">{{ .Title }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

@@ -167,5 +167,5 @@ Implement comprehensive monitoring:
 3. Deploy using provided manifests
 4. Monitor and scale as needed
 
-For questions or support, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For questions or support, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 

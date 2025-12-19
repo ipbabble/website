@@ -62,7 +62,7 @@ Templates should include:
 
 ## Questions?
 
-For testing questions, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For testing questions, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 
 **Full testing standards coming soon!**
 

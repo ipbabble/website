@@ -10,7 +10,7 @@ Help improve the AI Templates documentation! This guide shows you how to contrib
 
 ## Quick Start
 
-1. **Fork the repository**: [aipatterns on GitHub](https://github.com/redhat-data-and-ai/website)
+1. **Fork the repository**: [AI Templates website on GitHub](https://github.com/redhat-data-and-ai/website)
 2. **Make your changes**: Edit markdown files in `content/`
 3. **Test locally**: Run `./serve.sh` to preview
 4. **Submit a pull request**: Include description of changes
@@ -89,8 +89,8 @@ Before submitting:
 
 ## Need Help?
 
-- **Questions**: [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
-- **Issues**: File in the [aipatterns repository](https://github.com/redhat-data-and-ai/website/issues)
+- **Questions**: [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
+- **Issues**: File in the [website repository](https://github.com/redhat-data-and-ai/website/issues)
 
 Thank you for contributing! 🙏
 

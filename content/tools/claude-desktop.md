@@ -231,7 +231,7 @@ Claude will have access to tools from all servers!
 
 - **Build an MCP server**: [MCP Server Template](/templates/mcp-server/)
 - **Try Cursor too**: [Cursor Setup Guide](cursor)
-- **Join the community**: [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **Join the community**: [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 
-For questions or issues, visit [GitHub Issues](https://github.com/orgs/redhat-data-and-ai/discussions).
+For questions or issues, visit [GitHub Issues](https://github.com/redhat-data-and-ai/website/discussions).
 

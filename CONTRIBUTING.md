@@ -191,7 +191,7 @@ Brief description of changes
 ## Questions?
 
 - **Documentation questions**: Open an issue with the `documentation` label
-- **General discussion**: Use [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- **General discussion**: Use [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 - **Bugs**: File an [issue](https://github.com/redhat-data-and-ai/website/issues)
 
 ## Additional Resources

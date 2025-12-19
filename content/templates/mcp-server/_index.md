@@ -164,5 +164,5 @@ Ready to build your first MCP server? Choose your path:
 - **[Deploy at scale](quick-start)** using enterprise template patterns
 - **[Take to production](taking-mcp-server-to-production/)** with Kubernetes deployment
 
-For questions and support, visit our [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For questions and support, visit our [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 

@@ -103,7 +103,7 @@ Orchestrate complex workflows that require multiple tools, decision points, and 
 
 1. **Explore the repository** - [View on GitHub](https://github.com/redhat-data-and-ai/template-agent)
 2. **Build an MCP server first** - [MCP Server Template](/templates/mcp-server/)
-3. **Join the community** - [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+3. **Join the community** - [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 
 {{< tip >}}
 **Prerequisites**: Before building agents, we recommend setting up at least one MCP server to provide tools and capabilities for your agent to use.

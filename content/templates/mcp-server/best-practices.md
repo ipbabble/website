@@ -353,5 +353,5 @@ async def test_tool_integration(test_client):
 - **[FastAPI Documentation](https://fastapi.tiangolo.com/)** - Enterprise web framework
 - **[Pydantic Settings](https://docs.pydantic.dev/usage/settings/)** - Configuration management
 
-For questions and community support, visit [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions).
+For questions and community support, visit [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions).
 

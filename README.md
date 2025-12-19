@@ -65,5 +65,5 @@ Apache 2.0 License - See [LICENSE](LICENSE)
 
 ## Questions?
 
-- **GitHub Discussions:** https://github.com/orgs/redhat-data-and-ai/discussions
-- **Issues:** https://github.com/redhat-data-and-ai/aipatterns/issues
+- **GitHub Discussions:** https://github.com/redhat-data-and-ai/website/discussions
+- **Issues:** https://github.com/redhat-data-and-ai/website/issues

@@ -27,7 +27,7 @@
             <div class="pf-u-display-flex pf-u-justify-content-space-between pf-u-align-items-center pf-u-flex-wrap">
               <!-- Edit this page button -->
               {{ if .File }}
-              <a href="https://github.com/redhat-data-and-ai/aipatterns/blob/main/content/{{ .File.Path }}"
+              <a href="https://github.com/redhat-data-and-ai/website/blob/main/content/{{ .File.Path }}"
                  class="pf-c-button pf-m-link"
                  target="_blank"
                  rel="noopener">
@@ -35,7 +35,7 @@
                 Edit this page
               </a>
               <!-- Documentation issue button -->
-              <a href="https://github.com/redhat-data-and-ai/aipatterns/issues/new?title=Docs:%20{{ .Title | urlquery }}&body=Page:%20{{ .Permalink | urlquery }}"
+              <a href="https://github.com/redhat-data-and-ai/website/issues/new?title=Docs:%20{{ .Title | urlquery }}&body=Page:%20{{ .Permalink | urlquery }}"
                  class="pf-c-button pf-m-link"
                  target="_blank"
                  rel="noopener">

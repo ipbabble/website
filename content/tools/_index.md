@@ -63,7 +63,7 @@ Before using any AI tool:
 
 Using a different AI tool? We'd love to add your guide!
 
-- Share your experience in [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+- Share your experience in [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 - Submit a pull request with your tool guide
 - Follow our [contribution guidelines](/contribute)
 

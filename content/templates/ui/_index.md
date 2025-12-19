@@ -129,7 +129,7 @@ Provide a chat interface for non-technical users to query and explore data using
 1. **Explore the repository** - [View on GitHub](https://github.com/redhat-data-and-ai/template-ui)
 2. **Build an agent first** - [Agent Template](/templates/agent/)
 3. **Set up MCP servers** - [MCP Server Template](/templates/mcp-server/)
-4. **Join the community** - [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions)
+4. **Join the community** - [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions)
 
 {{< tip >}}
 **Full Stack**: For a complete AI application, combine this UI template with the Agent Template and MCP Server Template for a full stack solution.

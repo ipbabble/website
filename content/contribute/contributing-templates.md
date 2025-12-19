@@ -43,7 +43,7 @@ Before submitting a new template, ensure it has:
 
 ## Questions?
 
-For now, open a discussion in [GitHub Discussions](https://github.com/orgs/redhat-data-and-ai/discussions) to propose new templates.
+For now, open a discussion in [GitHub Discussions](https://github.com/redhat-data-and-ai/website/discussions) to propose new templates.
 
 **Full guidelines coming soon!**
 
