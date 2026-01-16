@@ -1,10 +1,10 @@
 ---
-title: "Zero to Production: Agentic AI Workshop"
+title: "Zero to Production: Agentic AI Onboarding"
 weight: 10
 description: "Build a complete, professional-grade AI application using three modular open-source templates."
 ---
 
-Welcome to the **Agentic AI Workshop**. In this guide, you will learn how to build a complete, professional-grade AI application using three modular open-source templates.
+Welcome to the **Agentic AI Onboarding**. In this guide, you will learn how to build a complete, professional-grade AI application using three modular open-source templates.
 
 This isn't just a small demo; we are building the real, scalable "plumbing" that powers enterprise-level AI. Whether you are a solo developer or preparing for a hackathon, these templates provide the production-ready foundation you need.
 
@@ -18,9 +18,9 @@ To understand how these three pieces fit together, imagine a high-tech restauran
 
 ---
 
-## How This Workshop Works
+## How This Onboarding Works
 
-This workshop assumes you're using an **AI code assistant** (such as Cursor, Claude Code, or GitHub Copilot) to help you build. When you encounter missing tools or dependencies, your AI assistant will detect the issue and guide you through installation automatically.
+This onboarding assumes you're using an **AI code assistant** (such as Cursor, Claude Code, or GitHub Copilot) to help you build. When you encounter missing tools or dependencies, your AI assistant will detect the issue and guide you through installation automatically.
 
 {{< tip >}}
 **AI-Assisted Development**: Your code assistant handles installing tools like `uv`, `node`, `make`, and `podman` as needed. Just follow along—when something's missing, ask your AI assistant to help install it.
@@ -72,6 +72,8 @@ The UI's backend automatically connects to the Agent at `http://localhost:5002`.
 
 The MCP Server is a FastAPI-based microservice that keeps your business logic (tools) separate from your AI logic.
 
+For the most up-to-date setup steps, please visit the [MCP Server Template repository](https://github.com/redhat-data-and-ai/template-mcp-server) and follow the instructions in the README.
+
 #### Quick Start
 
 1. **Clone and Enter:**
@@ -94,6 +96,8 @@ make local
 ### 2. The Template Agent (The Brain)
 
 Built with **LangGraph**, this agent handles stateful conversations, meaning it remembers what was said previously.
+
+For the most up-to-date setup steps, please visit the [Agent Template repository](https://github.com/redhat-data-and-ai/template-agent) and follow the instructions in the README.
 
 #### Quick Start
 
@@ -125,6 +129,8 @@ curl -X POST "http://localhost:5002/v1/stream" \
 ### 3. The Template UI (The Face)
 
 A modern **React + Fastify** interface that supports real-time streaming word-by-word responses.
+
+For the most up-to-date setup steps, please visit the [UI Template repository](https://github.com/redhat-data-and-ai/template-ui) and follow the instructions in the README.
 
 #### Quick Start
 
@@ -209,7 +215,7 @@ Alternatively, look inside the `Makefile` and run the commands manually.
 
 ---
 
-## From Workshop to Real Application
+## From Onboarding to Real Application
 
 You've got all three components running—congratulations! Now comes the exciting part: transforming these generic templates into a solution that solves **your** business problem.
 
